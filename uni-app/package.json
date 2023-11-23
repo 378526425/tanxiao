@@ -1,0 +1,17 @@
+{
+    "id": "zyq-movableRefresh",
+    "name": "基于movable-area和scroll-view的局部下拉刷新、上拉加载插件",
+    "version": "1.0.2",
+    "description": "简单的功能插件，实现局部下拉刷新、上拉加载滚动列表",
+    "keywords": [
+        "下拉刷新",
+        "上拉加载",
+        "滚动列表"
+    ],
+    "dcloudext": {
+        "category": [
+            "前端组件",
+            "通用组件"
+        ]
+    }
+}

@@ -1,0 +1,185 @@
+{
+	"easycom": {
+		"^uni-(.*)": "@/uni_modules/uni-$1/components/uni-$1/uni-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/home/index",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"background": "black" //此处背景色与页面中一致
+				}
+
+			}
+		},
+		{
+			"path": "pages/login/index",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"background": "black" //此处背景色与页面中一致
+				}
+			}
+
+		}, {
+			"path": "pages/login/register",
+			"style": {
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/login/registerInfo",
+			"style": {
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/user/index",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"background": "black" //此处背景色与页面中一致
+				}
+			}
+
+		}, {
+			"path": "pages/community/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"background": "black" //此处背景色与页面中一致
+				}
+			}
+
+		}, {
+			"path": "pages/message/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"background": "black" //此处背景色与页面中一致
+				}
+			}
+
+		}, {
+			"path": "pages/login/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/login/register",
+			"style": {
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/login/registerInfo",
+			"style": {
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/user/privacy",
+			"style": {
+				"navigationStyle": "custom"
+			}
+
+		},
+		{
+			"path": "pages/user/attention",
+			"style": {
+				"navigationStyle": "custom"
+				
+			
+			}
+		}
+	],
+	"subPackages": [{
+		"root": "pages/videoMatching",
+		"pages": [{
+				"path": "index",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			},
+			{
+				"path": "matching",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			},
+			{
+				"path": "videoStart",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			},
+			{
+				"path": "videoEnd",
+				"style": {
+					"navigationStyle": "custom"
+				}
+			}
+		]
+	}],
+	"preloadRule": {
+		"pages/home/index": {
+			"network": "all",
+			"packages": ["pages/videoMatching"]
+		}
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"dynamicRpx": true,
+		"app-plus": {
+			"scrollIndicator": "none" //全局 在APP页面都不显示滚动条
+		}
+	},
+	"tabBar": {
+		"selectedColor": "#79D5AD",
+		"color": "#999999",
+		"backgroundColor": "#ffffff",
+		"borderStyle": "white",
+		"list": [{
+				"pagePath": "pages/home/index",
+				"text": " "
+			},
+			// {
+			// 	"pagePath": "pages/home/index",
+			// 	"text": " "
+			// },
+			/* {
+				"pagePath": "pages/community/index",
+				"text": " "
+			}, {
+				"pagePath": "pages/message/index",
+				"text": " "
+			}, */
+			{
+				"pagePath": "pages/user/index",
+				"text": " "
+			}
+			// , {
+			// 	"pagePath": "pages/user/index",
+			// 	"text": " "
+			// }
+		]
+	},
+	"uniIdRouter": {},
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "", //模式名称
+				"path": "", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			}
+		]
+	}
+}

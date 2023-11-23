@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wxmblog.community.dao.FrUserDao">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.wxmblog.community.entity.FrUserEntity" id="frUserMap">
+        <result property="id" column="id"/>
+        <result property="creator" column="creator"/>
+        <result property="createTime" column="create_time"/>
+        <result property="modifyer" column="modifyer"/>
+        <result property="modifyTime" column="modify_time"/>
+        <result property="delFlag" column="del_flag"/>
+        <result property="version" column="version"/>
+        <result property="phone" column="phone"/>
+        <result property="password" column="password"/>
+        <result property="headPortrait" column="head_portrait"/>
+        <result property="nickName" column="nick_name"/>
+        <result property="birthday" column="birthday"/>
+        <result property="lon" column="lon"/>
+        <result property="lat" column="lat"/>
+        <result property="city" column="city"/>
+        <result property="gender" column="gender"/>
+        <result property="goldBalance" column="gold_balance"/>
+    </resultMap>
+
+    <!--获取首页动态用户信息-->
+    <resultMap id="dynamicUserResponse" type="com.wxmblog.community.common.rest.response.user.DynamicUserResponse">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="nick_name" jdbcType="VARCHAR" property="nickName"/>
+        <result column="head_portrait" jdbcType="VARCHAR" property="headPortrait"/>
+    </resultMap>
+    <select id="getDynamicUser" resultMap="dynamicUserResponse" parameterType="map">
+        select fu.id,fu.nick_name,fu.head_portrait from fr_user fu
+        <where>
+            fu.del_flag=0 and fu.status='ENABLE' and fu.head_portrait is not null
+            <if test="gender!=null and gender!=''">
+                and fu.gender!=#{gender}
+            </if>
+            <if test="id!=null and id!=''">
+                and id!=#{id}
+            </if>
+        </where>
+        order by fu.create_time desc limit 10
+    </select>
+
+
+    <resultMap id="followPageResponse" type="com.wxmblog.community.common.rest.response.user.FollowPageResponse">
+    </resultMap>
+
+    <!--个人中心 我的关注列表-->
+    <select id="getFollowPage" resultMap="followPageResponse" parameterType="Integer">
+       select
+        fu.id,
+        fu.head_portrait,
+        fu.nick_name,
+        fu.city,
+				case (select count(1) from fr_user_follow fuf1 where fuf1.del_flag=0 and fuf1.user_id=fu.id and fuf1.follow_id=${id})
+					when 1 then 'FRIEND'
+					else 'FOLLOW' end as followStatus
+        from
+        fr_user_follow fuf
+        left join fr_user fu on fu.id = fuf.follow_id
+        where
+        fu.del_flag=0 and fuf.del_flag=0
+        and fu.status='ENABLE'
+        and fuf.user_id = ${id}
+        order by
+        fuf.id desc
+    </select>
+
+    <!--个人中心 我的关注粉丝列表-->
+    <select id="getFansPage" resultMap="followPageResponse" parameterType="Integer">
+       select
+        fu.id,
+        fu.head_portrait,
+        fu.nick_name,
+        fu.city,
+				case (select count(1) from fr_user_follow fuf1 where fuf1.del_flag=0 and fuf1.user_id=${id} and fuf1.follow_id=fu.id)
+					when 1 then 'FRIEND'
+					else 'FANS' end as followStatus
+        from
+        fr_user_follow fuf
+        left join fr_user fu on fu.id = fuf.user_id
+        where
+        fu.del_flag=0 and fuf.del_flag=0
+        and fu.status='ENABLE'
+        and fuf.follow_id = ${id}
+        order by
+        fuf.id desc
+    </select>
+</mapper>

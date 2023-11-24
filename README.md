@@ -8,7 +8,7 @@ https://www.wxmblog.com/archives/shi-pin-pi-pei-jiao-you-she-jiao-app
 https://www.wxmblog.com/devminio/tanxiao/2023/11/23/f6c5d4f9-4951-47f2-a274-b7abefc1e1eb.apk <br>
 测试账号：<br>
 用户名：15902393423 <br>
-密码：123456
+密码：123456 <br>
 # 合作洽谈
 专业后端，资深UI，前端，运维，产品，测试，项目管理俱全，项目经验丰富，如果你有软件开发需求可与我联系，微信：MMRWXM（请注明来意）
 # 项目地址
@@ -20,11 +20,13 @@ https://gitee.com/wxmr0/tanxiao
 ✅允许
 - 允许用于个人学习、毕业设计、教学案例、公益事业、商业使用
 - 禁止将本项目的代码和资源进行任何形式的出售，产生的一切任何后果责任由侵权者自负
-- 推荐Watch、Star项目，获取项目第一时间更新，同时也是对项目最好的支持
+- 推荐Watch、Star项目，获取项目第一时间更新，同时也是对项目最好的支持 <br>
+
 # 项目清单
 完整项目清单包含如下<br>
 1 APP端(uni-app)<br>
-2 服务端(tanxiao-server)<br>
+2 服务端(tanxiao-server) <br>
+
 # 项目结构
 ## APP端
 ```
@@ -73,14 +75,16 @@ app端使用uniapp开发，一次开发可垮三端平台，目前暂未调试�
 - 找回密码
 - 登录 注销登录
 - 粉丝，关注列表
-- ......
+
 # 安装教程
 1. 从git上拉下来，一共包含服务端（tanxiao-server）和客户端(uni-app)两个项目文件
-2. 可直接运行客户端,此时客户端连接的是线上服务接口地址，如需要连接自己的服务端接口则需要本地启动服务端（tanxiao-server），然后修改客户端相关配置，具体修改细则查看对应项目中README.md
+2. 可直接运行客户端,此时客户端连接的是线上服务接口地址，如需要连接自己的服务端接口则需要本地启动服务端（tanxiao-server），然后修改客户端相关配置，具体修改细则查看对应项目中README.md <br>
+
 # 使用说明
 1. 项目演示apk中演示的功能就是目前开发的全部功能了
 2. 项目中涉及的第三方服务有 腾讯云im,阿里云短信需自行开通并修改相应配置
 3. 项目中部分功能还未开发完成，后续功能暂时没有开发计划，需要可自行开发完善，可联系作者索要ui设计图
+
 # 页面展示
 ## 客户端
 ![image-1700813209046](https://www.wxmblog.com/upload/2023/11/image-1700813209046.png)
@@ -89,6 +93,7 @@ app端使用uniapp开发，一次开发可垮三端平台，目前暂未调试�
 ![image-1700813332982](https://www.wxmblog.com/upload/2023/11/image-1700813332982.png)
 ![image-1700814048054](https://www.wxmblog.com/upload/2023/11/image-1700814048054.png)
 ![image-1700814101289](https://www.wxmblog.com/upload/2023/11/image-1700814101289.png)
+
 # 联系我们
 ## 作者微信
 MMRWXM

@@ -94,5 +94,5 @@ app端使用uniapp开发，一次开发可垮三端平台，目前暂未调试�
 MMRWXM
 ## QQ交流群
 665351147
-# 其他开源项目推荐
+# 其他优秀开源项目推荐
 https://www.wxmblog.com/categories/open

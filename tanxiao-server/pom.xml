@@ -23,7 +23,7 @@
         <spring.cloud.version>2021.0.1</spring.cloud.version>
         <spring.cloud.alibaba.version>2021.0.1.0</spring.cloud.alibaba.version>
         <maven.compiler.plugin>3.8.1</maven.compiler.plugin>
-        <msfast.base.common.version>0.0.1</msfast.base.common.version>
+        <msfast.base.common.version>0.0.6</msfast.base.common.version>
         <springboot.maven.plugin.version>2.7.6</springboot.maven.plugin.version>
     </properties>
 
